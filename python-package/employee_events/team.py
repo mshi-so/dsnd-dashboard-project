@@ -72,4 +72,4 @@ class Team(QueryBase, QueryMixin):
                     GROUP BY employee_id
                    )
                 """
-        return self.query_to_df(query)
+        return self.pandas_query(query)
