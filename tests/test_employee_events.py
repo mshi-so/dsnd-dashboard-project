@@ -13,7 +13,7 @@ def db_path():
     
     # Using the `project_root` variable
     # return a pathlib object for the `employee_events.db` file
-    return project_root / 'employee_events' / 'employee_events.db'
+    return project_root / 'python-package' / 'employee_events' / 'employee_events.db'
 
 # Define a function called
 # `test_db_exists`
@@ -26,7 +26,7 @@ def test_db_exists(db_path):
     # using the pathlib `.is_file` method
     # assert that the sqlite database file exists
     # at the location passed to the test_db_exists function
-    return db_path.is_file()
+    assert db_path.is_file()
 
 @pytest.fixture
 def db_conn(db_path):
@@ -46,7 +46,7 @@ def test_employee_table_exists(table_names):
 
     # Assert that the string 'employee'
     # is in the table_names list
-    return 'employee' in table_names
+    assert 'employee' in table_names
 
 # Define a test function called
 # `test_team_table_exists`
@@ -56,7 +56,7 @@ def test_team_table_exists(table_names):
 
     # Assert that the string 'team'
     # is in the table_names list
-    return 'team' in table_names
+    assert 'team' in table_names
 
 # Define a test function called
 # `test_employee_events_table_exists`
@@ -66,5 +66,5 @@ def test_employee_events_table_exists(table_names):
 
     # Assert that the string 'employee_events'
     # is in the table_names list
-    return 'employee_events' in table_names
+    assert 'employee_events' in table_names
 
